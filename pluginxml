@@ -1,0 +1,65 @@
+<idea-plugin>
+  <id>com.ydzy.tangchaoSqlToJava</id>
+  <name>tangchaoSqlToJava</name>
+  <version>1.0</version>
+  <vendor email="419704299@qq.com" url="https://git.oschina.net/419704299/xmind">南京移动作业项目组</vendor>
+
+  <description><![CDATA[
+   移动作业专属工具SqlToJava把sql文件直接转成java文件.<br>
+
+    ]]></description>
+
+  <change-notes><![CDATA[
+      对酒当歌，人生几何？
+譬如朝露，去日苦多。
+慨当以慷，忧思难忘。
+何以解忧？唯有杜康。
+青青子衿，悠悠我心。
+但为君故，沈吟至今。
+呦呦鹿鸣，食野之苹。
+我有嘉宾，鼓瑟吹笙。
+明明如月，何时可掇？
+忧从中来，不可断绝。
+越陌度阡，枉用相存。
+契阔谈宴，心念旧恩。
+月明星稀，乌鹊南飞，
+绕树三匝，何枝可依？
+山不厌高，海不厌深。
+周公吐哺，天下归心。<br>
+      <em>唐超</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+
+  -->
+  <depends>com.intellij.modules.lang</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+<!--    <applicationConfigurable instance="com.huachao.plugin.settings.SettingsUI"/>-->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <!--<action id="HelloWorld.FirstPlugin" class="com.huachao.plugin.FirstPlugin" text="唐超" description="A test menu ">-->
+      <!--<add-to-group group-id="CodeMenu" anchor="first"/>-->
+    <!--</action>   -->
+    <!--<action id="Dialog.id" class="com.huachao.plugin.CreateDialogAction" text="唐超CreateDialogAction" description="测试dailog">-->
+      <!--<add-to-group group-id="CodeMenu" anchor="first"/>-->
+    <!--</action>-->
+    <action id="SqlToJava.ID" class="com.huachao.plugin.SqlToJava" text="唐超SqlToJava">
+      <add-to-group group-id="EditMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift Q"/>
+    </action>
+    <!--<action id="SqlToJavaGui.ID" class="com.huachao.plugin.SqlToJavaFormGui" text="唐超SqlToJavaFormGui">-->
+      <!--<add-to-group group-id="EditMenu" anchor="first"/>-->
+      <!--<keyboard-shortcut keymap="$default" first-keystroke="shift T"/>-->
+    <!--</action>-->
+  </actions>
+
+</idea-plugin>
