@@ -26,6 +26,7 @@ import javax.swing.JTextArea;
 public class SqlToJavaGui extends JFrame {
     private JButton btn0 = new JButton("将PL/SQL美化后的sql生成JAVA语句(  去掉SCYW.)");
     private JButton btn1 = new JButton("执行远程查询方法remoteExecuteQuery");
+    private JButton btn2 = new JButton("SQL增加SCYW.");
     private JTextArea input = new JTextArea(20, 121);
     private JTextArea show = new JTextArea("Result:\n", 20, 121);
 
@@ -41,7 +42,7 @@ public class SqlToJavaGui extends JFrame {
         this.mEditor = mEditor;
         this.mProject = mProject;
         setTitle(title);
-        input.setText(selectText);
+//        input.setText(selectText);
     }
 
     private SqlToJavaGui() {
@@ -52,8 +53,9 @@ public class SqlToJavaGui extends JFrame {
         setLocationRelativeTo(null);
         add(btn0);
         add(btn1);
+        add(btn2);
         add(input);
-//        add(show);
+        add(show);
 
         btn0.addActionListener(new ActionListener() {
             @Override
@@ -67,10 +69,45 @@ public class SqlToJavaGui extends JFrame {
                 yuanchengchaxunfangfa();
             }
         });
-
+        btn2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SCYWzhuanhuanfangfa();
+            }
+        });
     }
 
+    /**
+     * 方法描述：增加SCYW.
+     * 创建人：tangchao
+     * QQ:419704299@qq.com
+     * 创建时间：2017年8月9日 下午4:50:18
+     * 返回值: void
+     */
+    protected void SCYWzhuanhuanfangfa() {
+        String string = input.getText();
+        string = string.toUpperCase();
 
+        string = string.replace("FROM ", "FROM SCYW.");
+        String sz[] = string.split("\n");
+        List list = new ArrayList<>();
+        String ss = "";
+        // 去掉空行
+        for (int i = 0; i < sz.length; i++) {
+            if ("".equals(sz[i])) {
+            } else {
+                list.add(sz[i]);
+            }
+        }
+
+        for (int i = 0; i < list.size(); i++) {
+            ss = ss + "\n" + list.get(i) ;
+        }
+
+
+        show.setText(ss );
+
+    }
 
     //远程查询方法
     private void yuanchengchaxunfangfa() {
@@ -101,9 +138,9 @@ public class SqlToJavaGui extends JFrame {
                 + "\n" + "}" + "\n" + "\n" + "} else {" + "\n" + "\n" + "}" + "\n" + "} catch (Exception e) {" + "\n"
                 + "\n" + "}";
 
-//        show.setText(string2 + ss + datetable);
+        show.setText(string2 + ss + datetable);
 
-        changeSelectText(string2 + ss + datetable);
+//        changeSelectText(string2 + ss + datetable);
     }
 
     /**
@@ -132,9 +169,9 @@ public class SqlToJavaGui extends JFrame {
             ss = ss + "\n" + "sb.append(\"" + list.get(i) + " \");";
         }
         String string2 = "StringBuilder sb = new StringBuilder();";
-//        show.setText(string2 + ss);
+        show.setText(string2 + ss);
 
-        changeSelectText(string2 + ss);
+//        changeSelectText(string2 + ss);
     }
     /**
      * 方法描述：   显示在页面上

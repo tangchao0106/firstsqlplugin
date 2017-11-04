@@ -1,0 +1,50 @@
+<idea-plugin>
+  <id>com.ydzy.tangchaoGui</id>
+  <name>tangchaoSqlToJavaiGui</name>
+  <version>1.1</version>
+  <vendor email="419704299@qq.com" url="https://git.oschina.net/419704299/xmind">南京移动作业项目组</vendor>
+
+  <description><![CDATA[
+  1.1版Gui 移动作业专属工具SqlToJava把sql文件直接转成java文件.<br>
+
+    ]]></description>
+
+  <change-notes><![CDATA[
+有的时候，我特别怀念北伐时期，一呼百应，所向披靡。那时，身上没有负担，尽可以和民众站在一起<br>
+      <em>唐超</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+
+  -->
+  <depends>com.intellij.modules.lang</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <!--    <applicationConfigurable instance="com.huachao.plugin.settings.SettingsUI"/>-->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <!--<action id="HelloWorld.FirstPlugin" class="com.huachao.plugin.FirstPlugin" text="唐超" description="A test menu ">-->
+    <!--<add-to-group group-id="CodeMenu" anchor="first"/>-->
+    <!--</action>   -->
+    <!--<action id="Dialog.id" class="com.huachao.plugin.CreateDialogAction" text="唐超CreateDialogAction" description="测试dailog">-->
+    <!--<add-to-group group-id="CodeMenu" anchor="first"/>-->
+    <!--</action>-->
+    <!--<action id="SqlToJava.ID" class="com.huachao.plugin.SqlToJava" text="唐超">-->
+    <!--<add-to-group group-id="EditMenu" anchor="first"/>-->
+    <!--<keyboard-shortcut keymap="$default" first-keystroke="shift Q"/>-->
+    <!--</action>-->
+    <action id="SqlToJavaGui.ID" class="com.huachao.plugin.SqlToJavaFormGui" text="唐超SqlToJavaFormGui">
+      <add-to-group group-id="EditMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift T"/>
+    </action>
+  </actions>
+
+</idea-plugin>
